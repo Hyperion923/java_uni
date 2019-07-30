@@ -1,9 +1,9 @@
 package lösungen.t2;
 
 public class Tamagotchi {
-    int hunger;
-    int mood;
-    int fatigue;
+    private int hunger;
+    private int mood;
+    private int fatigue;
     private int hungry;
     private int happy;
     private int tired;
@@ -15,14 +15,14 @@ public class Tamagotchi {
     }
 
 
-    void eat() {
+    private void eat() {
         if (fatigue <= tired) {
             hunger -= 3;
             fatigue += 2;
         }
     }
 
-    void sleep() {
+    private void sleep() {
         if (hunger <= hungry) {
             hunger += 1;
             mood += 1;
@@ -34,7 +34,7 @@ public class Tamagotchi {
         }
     }
 
-    void play() {
+    private void play() {
         if (hunger <= hungry) {
             hunger += 2;
             mood += 2;
@@ -42,15 +42,28 @@ public class Tamagotchi {
         }
     }
 
-    void pet() {
+    private void pet() {
         hunger += 1;
         mood += 2;
     }
-    String getGenerelCondition(){
+    private String getGenerelCondition(){
         if (fatigue >  tired){
             return "tired";
+        }else if (hunger > hungry){
+            return "hungry";
         }else if (mood > happy){
-            return "";
+            return "happy";
         }
+        else return "indifferent";
+    }
+
+    public static void main(String[] args) {
+        Tamagotchi t = new Tamagotchi(0, 0, 0);
+        t.pet();
+        t.eat();
+        t.sleep();
+        System.out.print(t.getGenerelCondition());
+
+
     }
 }
