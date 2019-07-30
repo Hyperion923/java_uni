@@ -63,7 +63,5 @@ public class Tamagotchi {
         t.eat();
         t.sleep();
         System.out.print(t.getGenerelCondition());
-
-
     }
 }
