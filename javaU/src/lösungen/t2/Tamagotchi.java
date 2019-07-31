@@ -46,22 +46,32 @@ public class Tamagotchi {
         hunger += 1;
         mood += 2;
     }
-    private String getGenerelCondition(){
-        if (fatigue >  tired){
-            return "tired";
-        }else if (hunger > hungry){
-            return "hungry";
-        }else if (mood > happy){
-            return "happy";
-        }
-        else return "indifferent";
+
+    private void getGenerelCondition() {
+        if (fatigue > tired) {
+            System.out.print("tired");
+            return;
+        } else if (hunger > hungry) {
+            System.out.print("hungry");
+            return;
+        } else if (mood > happy) {
+            System.out.print("happy");
+            return;
+
+        } else System.out.print("indifferent");
+    }
+
+    void makeHappy() {
+        pet();
+        eat();
+        sleep();
+
     }
 
     public static void main(String[] args) {
         Tamagotchi t = new Tamagotchi(0, 0, 0);
-        t.pet();
-        t.eat();
-        t.sleep();
-        System.out.print(t.getGenerelCondition());
+        t.makeHappy();
+
+        t.getGenerelCondition();
     }
 }
