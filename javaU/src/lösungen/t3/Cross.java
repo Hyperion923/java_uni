@@ -9,10 +9,7 @@ public class Cross {
     public int crossTotal(int n) {
         int result = 0;
         for (int i = 0; i < n % 10; i++) {
-            String intTOString = "" + n;
-            result += Integer.valueOf(Character.toString(intTOString.charAt(i)));
-
-
+            result += Integer.valueOf(Character.toString(("" + n).charAt(i)));
         }
         return result;
     }
