@@ -15,14 +15,14 @@ public class Tamagotchi {
     }
 
 
-    private void eat() {
+    public void eat() {
         if (fatigue <= tired) {
             hunger -= 3;
             fatigue += 2;
         }
     }
 
-    private void sleep() {
+    public void sleep() {
         if (hunger <= hungry) {
             hunger += 1;
             mood += 1;
@@ -34,7 +34,7 @@ public class Tamagotchi {
         }
     }
 
-    private void play() {
+    public void play() {
         if (hunger <= hungry) {
             hunger += 2;
             mood += 2;
@@ -42,26 +42,22 @@ public class Tamagotchi {
         }
     }
 
-    private void pet() {
+    public void pet() {
         hunger += 1;
         mood += 2;
     }
 
-    private void getGenerelCondition() {
+    public String getGeneralCondition() {
         if (fatigue > tired) {
-            System.out.print("tired");
-            return;
+            return("tired");
         } else if (hunger > hungry) {
-            System.out.print("hungry");
-            return;
+            return("hungry");
         } else if (mood > happy) {
-            System.out.print("happy");
-            return;
-
-        } else System.out.print("indifferent");
+            return("happy");
+        } else return("indifferent");
     }
 
-    void makeHappy() {
+    public void makeHappy() {
         pet();
         eat();
         sleep();
@@ -72,6 +68,6 @@ public class Tamagotchi {
         Tamagotchi t = new Tamagotchi(0, 0, 0);
         t.makeHappy();
 
-        t.getGenerelCondition();
+        System.out.println(t.getGeneralCondition());
     }
 }
