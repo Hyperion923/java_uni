@@ -3,36 +3,42 @@ package lösungen.t3;
 public class NochZuBenennen {
     public static void main(String[] args) {
         NochZuBenennen nochZuBenennen = new NochZuBenennen();
-        nochZuBenennen.printDiamonds(2);
+        nochZuBenennen.printDiamond(3);
     }
 
-    void printDiamonds(int number) {
-        int i, j, space = 1;
-        int newNumber = 2 * number - 1;
-        space = newNumber - 1;
-        for (j = 1; j <= newNumber; j++) {
-            for (i = 1; i <= space; i++) {
+    public void printDiamond(int number) {
+        int space = number;
+        int abbruch1 = number + 1;
+        int abbruchStern = 1;
+
+        for (int i = 0; i < abbruch1; i++) {
+            for (int s = 0; s < space; s++) {
                 System.out.print(" ");
             }
             space--;
-            for (i = 1; i <= 2 * j - 1; i++) {
-                System.out.print("*");
+            for (int stars = 0; stars < abbruchStern; stars++) {
+                String ausgabe = "";
+                ausgabe = ausgabe + "*";
+                System.out.print(ausgabe);
             }
-            System.out.println("");
+            abbruchStern += 2;
+            System.out.println();
         }
         space = 1;
-        for (j = 1; j <= newNumber - 1; j++) {
-            for (i = 1; i <= space; i++) {
+        int abb = 2 * number - 1;
+        for (int i = 0; i < number; i++) {
+            for (int s = 0; s < space; s++) {
                 System.out.print(" ");
             }
             space++;
-            for (i = 1; i <= 2 * (newNumber - j) - 1; i++) {
+            for (int star = 0; star < abb; star++) {
                 System.out.print("*");
             }
-            System.out.println("");
-
+            abb -= 2;
+            System.out.println();
         }
-
     }
 
 }
+
+
