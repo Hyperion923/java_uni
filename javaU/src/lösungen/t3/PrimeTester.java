@@ -6,15 +6,18 @@ import java.util.stream.IntStream;
 public class PrimeTester {
     public static void main(String[] args) {
         PrimeTester primeTester = new PrimeTester();
-        primeTester.divisors(22);
+        primeTester.properDivisors(13);
     }
     public void divisors(int n) {
         if (n >= 1) {
-            System.out.println(IntStream.rangeClosed(1, n).filter(i -> n%i == 0).mapToObj(i ->""+i).collect(Collectors.joining()));
+            System.out.println(IntStream.rangeClosed(1, n).filter(i -> n%i == 0).mapToObj(i ->""+i+"\n").collect(Collectors.joining()));
         }
     }
 
-    public void properDivisors() {
+    public void properDivisors(int n) {
+        if (n >= 1) {
+            System.out.println(IntStream.rangeClosed(2, (n-1)).filter(i -> n%i == 0).mapToObj(i ->""+i+"\n").collect(Collectors.joining()));
+        }
 
     }
 
