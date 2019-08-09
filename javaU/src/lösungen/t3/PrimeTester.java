@@ -1,10 +1,17 @@
 package lösungen.t3;
 
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class PrimeTester {
-    public void divisors() {
-
+    public static void main(String[] args) {
+        PrimeTester primeTester = new PrimeTester();
+        primeTester.divisors(22);
+    }
+    public void divisors(int n) {
+        if (n >= 1) {
+            System.out.println(IntStream.rangeClosed(1, n).filter(i -> n%i == 0).mapToObj(i ->""+i).collect(Collectors.joining()));
+        }
     }
 
     public void properDivisors() {

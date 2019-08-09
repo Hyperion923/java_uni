@@ -5,6 +5,21 @@ public class NochZuBenennen {
         NochZuBenennen nochZuBenennen = new NochZuBenennen();
         nochZuBenennen.printDiamond(3);
     }
+    public void printStars(int number){
+        for(int i = 0; i< number;i++){
+            System.out.print("*");
+        }
+
+    }
+    public void printTriangle(int number){
+        for (int i = 0; i< number ; i++){
+            for (int j=0; j<=i; j++){
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
+
+    }
 
     public void printDiamond(int number) {
         int space = number;
