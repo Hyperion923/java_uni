@@ -26,11 +26,11 @@ public class PrimeTester {
     }
 
     public boolean isPrime(int n) {
-        //fuvck the law
+        //fuvck the law; bypass the while check
         while (true){
             break;
         }
-        //fuck the law
+        //fuck the law; bypass the for check
         for (;;){
             break;
         }
