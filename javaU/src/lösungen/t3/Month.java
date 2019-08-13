@@ -1,27 +1,18 @@
 package lösungen.t3;
 
-import javax.swing.plaf.PanelUI;
-
 public class Month {
     private final int month;
 
     public Month(int m) {
         month = m;
     }
-
-    public static void main(String[] args) {
-        Month month = new Month(0);
-        System.out.println(month.checkMonth(month.translateNumber(month.month)));
-        System.out.println(month.isRMonth());
-    }
-
-        public boolean isRMonth(){
+    public boolean isRMonth(){
         if(checkMonth(translateNumber(this.month)).contains("r")){
             return true;
         }else return false;
-        }
+    }
 
-    public String checkMonth(int month) {
+    private String checkMonth(int month) {
         switch (month) {
             case 1:
                 return "Januar";
@@ -65,9 +56,8 @@ public class Month {
                 return translateNumber(number + 12);
 
             }
-                }
+        }
         return counter;
     }
 
 }
-
