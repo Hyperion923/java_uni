@@ -1,6 +1,7 @@
 package lösungen.t5;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ListContains {
     ArrayList<String> list = new ArrayList<>() {{
@@ -29,6 +30,17 @@ public class ListContains {
 
         }
         return new ArrayList<>(result);
+    }
+
+    public ArrayList<String> unify2(ArrayList<String> input){
+        ArrayList<String> result = new ArrayList<>();
+        while (input.iterator().hasNext()){
+            String x = input.iterator().next();
+            if(x != null && !result.contains(x)){
+                result.add(x);
+            }
+        }
+        return result;
     }
 
     public void deleteTabu(ArrayList<String> posts, String tabu) {
